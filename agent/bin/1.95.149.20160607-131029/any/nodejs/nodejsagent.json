@@ -1,0 +1,46 @@
+{
+    "logLevel"             : "INFO",
+    "logLibrary"           : "native",
+    "allowConsoleLog"      : false,
+    "forceConsoleLog"      : false,
+    "allowDebugFlagsFromJS": false,
+
+    "defaultAppName"       : "nodejsApplication",
+
+    "scriptsBlackList": [
+        "npm", "gulp", "node-gyp"
+    ],
+    "appNameBlackList": [
+        "localtunnel-server", "forever", "atom-package-manager"
+    ],
+
+    "debugFlags" : {
+        "debugAgentActiveNodeJS"            : { "value": true,  "desc": "(de-)activate the agent" },
+        "debugNativeActiveNodeJS"           : { "value": true,  "desc": "(de-)activate native library" },
+        "debugInjectionActiveNodeJS"        : { "value": true,  "desc": "(de-)activate UEM injection" },
+
+        "debugDatadumpActiveNodeJS"         : { "value": false, "desc": "dump data sent from the server to the client" },
+        "debugMetadumpActiveNodeJS"         : { "value": false, "desc": "dump internal metadata structure" },
+        "debugParamsdumpActiveNodeJS"       : { "value": false, "desc": "dump function parameters and output" },
+
+        "debugLogRequestsNodeJS"            : { "value": false, "desc": "log all requests" },
+        "debugLogHeadersNodeJS"             : { "value": false, "desc": "log all request/response/outgoing headers"},
+        "debugLogNativeCallsNodeJS"         : { "value": false, "desc": "log calls to native library" },
+        "debugLogEnterExitNodeJS"           : { "value": false, "desc": "log enter/exit to/from functions/methods" },
+        "debugLogOriginalCallsNodeJS"       : { "value": false, "desc": "log calls to original methods that agent has covered" },
+        "debugLogPatchingNodeJS"            : { "value": false, "desc": "log info while patching modules (needs application restart)" },
+        "debugLogCtxStackNodeJS"            : { "value": false, "desc": "log stacktrace in case of loosing context in wrapped methods" },
+
+        "debugSupportMongoDBNodeJS"         : { "value": true,  "desc": "(de-)activate support for MongoDB"},
+
+        "debugLogFSNodeJS"                  : { "value": false, "desc": "log debug info about fs operations" },
+        "debugLogDNSNodeJS"                 : { "value": false, "desc": "log debug info about dns operations" },
+        "debugMongoDBNodeJS"                : { "value": false, "desc": "log debug info for MongoDB" },
+
+        "debugPurePathTracerNodeJS"         : { "value": false, "desc": "log debug info for pure path tracer (native)" },
+        "debugPathCorrelationNodeJS"        : { "value": false, "desc": "log debug info for path correlation (native)" },
+
+        "debugNodeEnableUemAfterWsNodeJS"   : { "value": false, "desc": "Enabled UEM injection in presence of a WebServer"},
+        "debugSuppressSupportAlertsNodeJS"  : { "value": false, "desc": "Marks any node.js support alert as non-ruxit-relevant" }
+    }
+}

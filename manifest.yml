@@ -1,9 +1,11 @@
 ---
 applications:
 - name: cf-sample-app-nodejs
-  memory: 128M
+  memory: 256M
   instances: 1
-  host: cf-nodejs
+  host: cf-nodejs-${random-word}
   buildpack: nodejs_buildpack
   path: .
+  services:
+  - ruxit
   

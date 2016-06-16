@@ -3,6 +3,24 @@
  */
 
 /*jslint node: true */
+var cfenv = require("cfenv")
+var appEnv = cfenv.getAppEnv()
+var ruxitEnv = appEnv.getServiceCreds(/ruxit/)
+var ruxitServer = ruxitEnv.server
+var ruxitTenant = ruxitEnv.tenant
+var ruxitToken = ruxitEnv.tenanttoken
+
+try {
+    require('/home/vcap/app/agent/bin/1.95.149.20160607-131029/any/nodejs/nodejsagent.js') ({
+      server: ruxitServer,
+      tenant: ruxitTenant,
+      tenanttoken: ruxitToken,
+      loglevelcon: 'none'
+    });
+} catch (err) {
+ console.log("ERROR! Can not find the ruxit nodejs agent!", err);
+}
+
 "use strict";
 
 var lessMiddleware = require('less-middleware');

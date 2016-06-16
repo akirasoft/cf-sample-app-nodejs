@@ -1,0 +1,43 @@
+{
+    "name": "nodejs",
+    "version": "1.0.0",
+    "description": "nodejsagent",
+    "directories": {
+        "test": "tests"
+    },
+    "dependencies": {
+        "cookie": "0.2.3",
+        "node-uuid": "1.4.7",
+        "semver": "5.1.0",
+        "set-cookie-parser": "1.0.1",
+        "shimmer": "1.1.0"
+    },
+    "devDependencies": {
+        "istanbul": "^0.4.0",
+        "mocha": "^2.3.3",
+        "should": "^7.1.1",
+        "mocha-junit-reporter": "1.8.0",
+        "jshint": "",
+        "jshint-html-reporter": "0.2.4",
+        "jscs": "",
+        "nosqlite": "",
+        "restify": "",
+        "mongodb": "",
+        "byline": "",
+        "express": "",
+        "urijs": ""
+    },
+    "scripts": {
+        "doc": "jsdoc -c .jsdoc.json .",
+        "lint": "jshint . && jscs .",
+        "lintCi": "jshint --reporter node_modules/jshint-html-reporter/reporter.js . > ../build/jshint/jshint.html && jscs .",
+        "pretest": "npm install",
+        "test": "mocha -c",
+        "coverage": "istanbul cover node_modules/mocha/bin/_mocha test",
+        "coverageCi": "istanbul cover node_modules/mocha/bin/_mocha test --dir ../build/coverage -- -R mocha-junit-reporter --reporter-options mochaFile=../build/test-results/junit.xml",
+        "checkCoverage": "istanbul check-coverage --statement 50"
+    },
+    "keywords": [ ],
+    "author": "Dynatrace",
+    "license": "Dynatrace"
+}
